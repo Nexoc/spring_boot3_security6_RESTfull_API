@@ -1,4 +1,4 @@
-package dto;
+package at.davl.movie.dto;
 
 
 import jakarta.persistence.*;
