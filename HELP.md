@@ -81,7 +81,6 @@ Test connection:
 ssh -T git@github.com
 
 
-
 GitHub-SSH-Key-Setup-Config-Ubuntu-Linux
 and git init
 git add
@@ -96,7 +95,7 @@ git push -u origin main
 + sudo apt install postgresql postgresql-contrib
 * to get in
 + sudo -u postgres psql
-+ 
+
 ### create user:
 + https://phoenixnap.com/kb/postgres-create-user
 + 
@@ -107,4 +106,3 @@ git push -u origin main
 *  List all the users with the following command:
 + \du
 
-*
