@@ -49,7 +49,5 @@ public class FileController {
 
         // convert to output stream and save it
         StreamUtils.copy(resourceFile, response.getOutputStream());
-
     }
-
 }

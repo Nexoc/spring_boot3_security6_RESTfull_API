@@ -34,3 +34,17 @@ The following guides illustrate how to use some features concretely:
 
 + https://www.youtube.com/watch?v=iZinLWQCMew&list=PLdSSipYLKxHqzCIK5quzIAVdyB497JFtj&index=2
 
+### Post 
+* http://localhost:8080/api/v1/movie/add-movie
+  + file: file.png
+    + movieDto : {
+            "movieId" : 1,
+            "title" : "Avengers: Infinity War",
+            "director" : "Russo Brothers",
+            "studio" : "Marvel Studio",
+            "movieCast" : ["RDJ", "Chris Evan", "Scarlett Johansson"],
+            "releaseYear" : 2018,
+            "poster" : "some.png",
+            "posterUrl" : "some_url"
+            }
+
