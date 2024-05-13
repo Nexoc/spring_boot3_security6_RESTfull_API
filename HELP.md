@@ -48,3 +48,61 @@ The following guides illustrate how to use some features concretely:
           "posterUrl" : "some_url"
           }
 
+### Intellij- run as root:
++ intellij-idea-ultimate
+
+
+https://snapcraft.io/install/intellij-idea-ultimate/debian
+
+sudo apt update
+sudo apt upgrade
+sudo apt install snapd
+sudo snap install core
+
+to install:
+sudo snap install intellij-idea-ultimate --classic
+// to run:
+intellij-idea-ultimate
+
+### How to increase code font size in IntelliJ:
+++ Editor | General, and select Change font size with Command+Mouse Wheel
+
+Setup ssh for github
+
+    https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux
+
+Generate ssh key:    
+ssh-keygen -o -t rsa -C "email@example.com"
+
+Cat .ssh:
+.ssh$ cat id_rsa.pub
+
+Test connection:    
+ssh -T git@github.com
+
+
+GitHub-SSH-Key-Setup-Config-Ubuntu-Linux
+and git init
+git add
+git commit -m "git init"
+git branch -M main
+and git remote set-url origin git@github.com:Nexoc/spring_boot3_security6_RESTfull_API.git
+git push -u origin main
+
+
+### Setup Postgresql:
+* https://www.pgsclusters.com/blog/install-postgresql-on-debian
++ sudo apt install postgresql postgresql-contrib
+* to get in
++ sudo -u postgres psql
+
+### create user:
++ https://phoenixnap.com/kb/postgres-create-user
++ 
++ CREATE USER [name] WITH PASSWORD '[password]';
++ 
++ grant all privileges on database mydb to myuser;
+
+*  List all the users with the following command:
++ \du
+
