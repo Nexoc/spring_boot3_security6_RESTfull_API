@@ -2,10 +2,13 @@ package at.davl.movie.controllers;
 
 
 import at.davl.movie.dto.MovieDto;
+import at.davl.movie.dto.MoviePageResponse;
 import at.davl.movie.service.MovieService;
 import at.davl.movie.exceptions.EmptyFileException;
+import at.davl.movie.utils.AppConstants;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -69,5 +72,24 @@ public class MovieController {
     public ResponseEntity<String> deleteMovieHandler(@PathVariable Integer movieId) throws IOException {
         return ResponseEntity.ok(movieService.deleteMovie(movieId));
     }
+
+    @GetMapping("/allMoviesPage")
+    public ResponseEntity<MoviePageResponse> getAllMoviesWithPaginationHandler(
+            @RequestParam(defaultValue = AppConstants.PAGE_Number, required = false) Integer pageNumber,
+            @RequestParam(defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageSize
+            ) {
+        return ResponseEntity.ok(movieService.getAllMoviesWithPagination(pageNumber, pageSize));
+    }
+
+    @GetMapping("/allMoviesPageSort")
+    public ResponseEntity<MoviePageResponse> getAllMoviesWithPaginationHandlerAndSort(
+            @RequestParam(defaultValue = AppConstants.PAGE_Number, required = false) Integer pageNumber,
+            @RequestParam(defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageSize,
+            @RequestParam(defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
+            @RequestParam(defaultValue = AppConstants.SORT_DIR, required = false) String dir
+    ) {
+        return ResponseEntity.ok(movieService.getAllMoviesWithPaginationAndSorting(pageNumber, pageSize, sortBy, dir));
+    }
+
 }
 
