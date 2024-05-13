@@ -29,7 +29,7 @@ public class FileServiceImpl implements FileService{
 
         // copy the file or upload file to the path and if the name of file will be the same
         // it will REPLACE_EXISTING file
-        Files.copy(file.getInputStream(), Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(file.getInputStream(), Paths.get(filePath) /*, StandardCopyOption.REPLACE_EXISTING*/);
 
         return fileName;
     }
