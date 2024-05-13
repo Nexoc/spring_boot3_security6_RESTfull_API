@@ -3,9 +3,9 @@ package at.davl.movie;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-// 5.
-// 19
-// git error solved
+// 9.
+// 15 min
+
 
 @SpringBootApplication
 public class MovieApiApplication {
