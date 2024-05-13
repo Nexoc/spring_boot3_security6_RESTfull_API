@@ -3,6 +3,7 @@ package at.davl.movie.controllers;
 
 import at.davl.movie.dto.MovieDto;
 import at.davl.movie.service.MovieService;
+import at.davl.movie.exceptions.EmptyFileException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
@@ -26,10 +27,12 @@ public class MovieController {
 
     @PostMapping("/add-movie")
     public ResponseEntity<MovieDto> addMovieHandler(@RequestPart MultipartFile file,
-                                                    @RequestPart String movieDto) throws IOException {
-        System.out.println("Movie Controller 32");
+                                                    @RequestPart String movieDto) throws IOException, EmptyFileException {
+
+        if (file.isEmpty()) {
+            throw new EmptyFileException("File is empty. Please send another file");
+        }
         MovieDto convertedDto = convertToMovieDto(movieDto);
-        System.out.println("Movie Controller 34");
         return new ResponseEntity<>(movieService.addMovie(convertedDto, file), HttpStatus.CREATED);
     }
 
