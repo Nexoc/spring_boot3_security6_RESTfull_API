@@ -15,7 +15,6 @@ public class MovieApiApplication {
 
 }
 
-
 /*
 ### Post http://localhost:8080/api/v1/movie/add-movie
 file: file.png
