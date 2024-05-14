@@ -1,8 +1,9 @@
 package at.davl.movie.auth.config;
 
 import at.davl.movie.auth.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Configurable;
+
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -15,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 
-@Configurable
+@Configuration
 public class ApplicationConfig {
 
     private final UserRepository userRepository;
@@ -27,7 +28,7 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> userRepository.findByUsername(username)
+        return username -> userRepository.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found"));
     }
 

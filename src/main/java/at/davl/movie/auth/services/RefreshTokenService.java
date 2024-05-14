@@ -24,14 +24,14 @@ public class RefreshTokenService {
 
     public RefreshToken createRefreshToken(String username) {
         // find user by email from DB
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User has not found by email: " + username));
 
         // get refresh token from user
         RefreshToken refreshToken = user.getRefreshToken();
 
         if(refreshToken == null) {
-            long refreshTokenValidity = 5*60*60*10000;
+            long refreshTokenValidity = 5*60*60*10000; // 30 * 1000 = 30 sec
             refreshToken = RefreshToken.builder()
                     // create and add refresh token
                     .refreshToken(UUID.randomUUID().toString())
