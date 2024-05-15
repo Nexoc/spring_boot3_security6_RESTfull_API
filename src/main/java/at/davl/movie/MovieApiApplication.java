@@ -3,8 +3,10 @@ package at.davl.movie;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-// 10
-// 24.18
+/**
+ * in application.yml should be changed email and password
+ * in EmailService in line 20 should be added email
+ */
 
 
 @SpringBootApplication
