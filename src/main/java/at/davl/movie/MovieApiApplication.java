@@ -3,8 +3,8 @@ package at.davl.movie;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-// 9.
-// 15 min
+// 10
+// 24.18
 
 
 @SpringBootApplication
@@ -29,4 +29,15 @@ movieDto : {
     "poster" : "some.png",
     "posterUrl" : "some_url"
   }
+
+body -> row
+ {
+    "name" : "marat",
+    "email" : "davl@gmail.com",
+    "username" : "nexoc",
+    "password" : "12345"
+}
+
+https://github.com/SudarshanShahCode/movieAPI-backend-YT/tree/master/src/main/java/com/movieflix
+
  */
