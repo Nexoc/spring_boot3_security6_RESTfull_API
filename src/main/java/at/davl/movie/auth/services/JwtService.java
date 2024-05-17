@@ -47,7 +47,10 @@ public class JwtService {
                 .parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
-                .parseClaimsJwt(token)
+                // important not JWT -> JWS
+                // https://stackoverflow.com/questions/61016123/io-jsonwebtoken-unsupportedjwtexception-signed-claims-jwss-are-not-supported
+                //.parseClaimsJwt(token)
+                .parseClaimsJws(token)
                 .getBody();
 
         /*

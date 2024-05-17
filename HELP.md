@@ -106,3 +106,13 @@ git push -u origin main
 *  List all the users with the following command:
 + \du
 
+### change second user to admin:
++ su postgres
++ psql
++ \c mydb -> your DB
++ SET role marat; -> your role in DB
++ SELECT current_user, session_user; -> check 
+
++ select * from users;
++ UPDATE users SET role='ADMIN' WHERE user_id=2;
+

@@ -47,7 +47,7 @@ POST localhost:8080/api/v1/auth/refresh
 Content-Type: application/json
 
 {
-  "refreshToken" : "c5fb851c-597f-43b2-afb5-8bd9adb59196"
+  "refreshToken" : "7f50cd9f-8626-41f4-a445-ec5c2e28d645"
 }
 
 
